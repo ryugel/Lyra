@@ -12,7 +12,11 @@ import SwiftUI
 struct Tools: View {
     var action: (() -> Void)?
     var body: some View {
-        editButton
+        VStack{
+            editButton.padding()
+            plusButton.padding()
+            favoriteButton.padding()
+        }
     }
 
     var editButton: some View {
@@ -24,8 +28,10 @@ struct Tools: View {
                     .foregroundStyle(.black)
                     .overlay(
                         Image(systemName: "pencil")
+                            .frame(width: LyraTheming.Size.huge.size, height: LyraTheming.Size.huge.size)
+                            .foregroundStyle(.white)
                     )
-                    .frame(width: LyraTheming.Size.huge.size, height: LyraTheming.Size.huge.size)
+                    
             }
             .buttonStyle(.plain)
         }
@@ -39,6 +45,8 @@ struct Tools: View {
                 .foregroundStyle(.black)
                 .overlay(
                     Image(systemName: "plus")
+                        .frame(width: LyraTheming.Size.huge.size, height: LyraTheming.Size.huge.size)
+                        .foregroundStyle(.white)
                 )
         }
         .buttonStyle(.plain)
@@ -51,14 +59,15 @@ struct Tools: View {
             Circle()
                 .foregroundStyle(.black)
                 .overlay(
-                    Image(systemName: "heart.fill")
+                    Image(systemName: "star.fill")
+                        .frame(width: LyraTheming.Size.huge.size, height: LyraTheming.Size.huge.size)
+                        .foregroundStyle(.white)
                 )
         }
-        .frame(width: LyraTheming.Size.huge.size, height: LyraTheming.Size.huge.size)
         .buttonStyle(.plain)
     }
 }
 
 #Preview {
-    Tools().editButton
+    Tools()
 }

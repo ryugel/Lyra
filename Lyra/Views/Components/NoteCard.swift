@@ -13,11 +13,12 @@ struct NoteCard: View {
     @State var title: String
     @State var content: String
     @State var created: Date
+    @State var color: ColorSelector
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(LyraTheming.Color.quinary.color)
-                .frame(width: 385, height: 385)
+                .foregroundStyle(color.color)
+                .frame(width: 185, height: 185)
                 .cornerRadius(5)
 
             VStack {
@@ -43,11 +44,8 @@ struct NoteCard: View {
                         .foregroundColor(LyraTheming.Color.tertiary.color)
                 }
             }
-            .frame(width: 365, height: 365)
+            .frame(width: 165, height: 165)
         }
     }
 }
 
-#Preview {
-    NoteCard(title: Note.defaultValue.title, content: Note.defaultValue.content, created: Note.defaultValue.created)
-}

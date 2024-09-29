@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftUICore
+import SwiftUI
 
 enum ColorSelector: String, Codable, CaseIterable {
     case red

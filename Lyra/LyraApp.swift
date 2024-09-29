@@ -12,7 +12,8 @@ import SwiftUI
 struct LyraApp: App {
     var body: some Scene {
         WindowGroup {
-            Sidebar()
+            HomeView()
+                .preferredColorScheme(.light)
         }
     }
 }
